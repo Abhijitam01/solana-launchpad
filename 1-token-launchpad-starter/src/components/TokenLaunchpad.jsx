@@ -1,14 +1,14 @@
 import { createInitializeAccount2Instruction, getMinimumBalanceForRentExemptAccount, getMinimumBalanceForRentExemptMint, MINT_SIZE, TOKEN_2022_PROGRAM_ID } from "@solana/spl-token";
-import { useConnection, useWallet } from "@solana/wallet-adapter-react/lib/types";
+import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import { Keypair, SystemProgram, Transaction } from "@solana/web3.js";
 
 export function TokenLaunchpad() {
 
     function createToken(){
-        const name = document.getElementById('name').value;
-        const symbol = document.getElementById('symbol').value ;
-        const image = document.getElementById('image').value ;
-        const initialSupply = document.getElementById('initalSupply').value;
+        const name = document.getElementById("name")?.value;
+        const symbol = document.getElementById('symbol')?.value ;
+        const image = document.getElementById('image')?.value ;
+        const initialSupply = document.getElementById('initalSupply')?.value;
 
         const {connection } = useConnection();
         const wallet = useWallet();
@@ -44,10 +44,10 @@ export function TokenLaunchpad() {
         flexDirection: 'column'
     }}>
         <h1>Solana Token Launchpad</h1>
-        <input className='inputText' type='text' placeholder='Name'></input> <br />
-        <input className='inputText' type='text' placeholder='Symbol'></input> <br />
-        <input className='inputText' type='text' placeholder='Image URL'></input> <br />
-        <input className='inputText' type='text' placeholder='Initial Supply'></input> <br />
+        <input id="name" className='inputText' type='text' placeholder='Name'></input> <br />
+        <input id="symbol" className='inputText' type='text' placeholder='Symbol'></input> <br />
+        <input id="image" className='inputText' type='text' placeholder='Image URL'></input> <br />
+        <input id="initialSupply" className='inputText' type='text' placeholder='Initial Supply'></input> <br />
         <button onClick={createToken} className='btn'>Create a token</button>
     </div>
 }
