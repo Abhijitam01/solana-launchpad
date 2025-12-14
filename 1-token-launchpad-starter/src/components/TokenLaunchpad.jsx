@@ -21,7 +21,7 @@ export function TokenLaunchpad() {
         }
 
         const mintLen = getMintLen([ExtensionType.MetadataPointer]);
-        const metadataLen = TYPE_SIZE + LENGTH_SIZE + pack(metadata).length ;
+        const metadataLength = TYPE_SIZE + LENGTH_SIZE + pack(metadata).length ;
 
         const lamports = await getMinimumBalanceForRentExemptMint(connection) ;
 

@@ -6,7 +6,7 @@ import {
     WalletMultiButton
 } from '@solana/wallet-adapter-react-ui';
 import '@solana/wallet-adapter-react-ui/styles.css';
-import { TokenLaunchpad } from './components/TokenLaunchpad';
+import { TokenLaunchpadFixed } from './components/TokenLaunchpadFixed';
 
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
             }}>
                <WalletMultiButton/>
                <WalletDisconnectButton/>
-               <TokenLaunchpad/>
+               <TokenLaunchpadFixed/>
              </div>
            </WalletModalProvider>
         </WalletProvider>
